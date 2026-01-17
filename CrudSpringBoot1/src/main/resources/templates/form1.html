@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>CRUD</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+ crossorigin="anonymous">
+</head>
+<body>
+  <div class="container mt-4">
+   <div class="col-sm-6">
+     <form th:action="@{/save1}" th:object=${empleado} method="POST">
+         <div class="card">
+           <div class="card-header">
+           <h3>Modulo Empleado</h3>
+           </div>
+           <div class="card-body">
+             <div class="form-group">
+              <label>Email</label>
+              <input th:field="*{email}" type="text" class="form-control"/>
+             </div>
+             <div class="form-group">
+              <label>Nombre</label>
+              <input th:field="*{nombre}" type="text" class="form-control"/>
+             </div>
+             <div class="form-group">
+              <label>Apellido Paterno</label>
+              <input th:field="*{apepat}" type="text" class="form-control"/>
+             </div>
+			 <div class="form-group">
+			  <label>Apellido Materno</label>
+			  <input th:field="*{apemat}" type="text" class="form-control"/>
+			 </div>
+			 <div class="form-group">
+			  <label>DNI</label>
+			  <input th:field="*{dni}" type="text" class="form-control"/>
+			 </div>
+			 <div class="form-group">
+			   <label>Sexo</label>
+			   <select th:field="*{sexo}" class="form-control">
+			     <option value="0">Seleccione...</option>
+			     <option value="1">Masculino</option>
+			     <option value="2">Femenino</option>
+			   </select>
+			 </div>
+           </div>
+           <div class="card-footer">
+           <input type="submit" value="Guardar" class="btn btn-success">
+           </div>
+         </div>
+     </form>
+   </div>
+ </div>
+</body>
+</html>
